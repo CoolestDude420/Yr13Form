@@ -1,0 +1,963 @@
+/* font inports */
+
+@import url('https://fonts.googleapis.com/css?family=Advent+Pro&display=swap');
+* {
+    box-sizing: border-box;
+    transition: margin ease-out .4s;
+}
+
+html,
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    scroll-behavior: smooth;
+    padding: 0;
+}
+
+
+/* general colour variables */
+
+html {
+    font-family: 'Advent Pro', sans-serif;
+    background: #DFDFDF;
+    --grey-white: #dfdfdf;
+    --white: #efefef;
+    --black: #2b2b2b;
+    --blue: #2c3e50;
+    --light-blue: #455E76;
+    --gold: #FFA700;
+}
+
+body {
+    padding-top: 100px;
+}
+
+
+/* to get rid of default HTML styling */
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+/* main header containing the logo and banner */
+
+.mainHeader {
+    width: 100%;
+    background: var(--white);
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    height: 65px;
+    z-index: 15;
+}
+
+
+/* the logo container*/
+
+.logo {
+    font: 250% 'Advent Pro', sans-serif;
+    font-weight: 900;
+    color: var(--blue);
+    display: flex;
+    float: left;
+    line-height: 65px;
+    height: 58px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+
+
+/* logo image */
+
+.logo img {
+    margin: 15px 10px;
+}
+
+
+/* text next to logo on desktop */
+
+.main-logo-text {
+    display: flex;
+    padding-left: 7px;
+}
+
+
+/* the 'Rides' in rickys' rides */
+
+.logoText:last-child {
+    color: #E76300;
+}
+
+
+/* logo colour change */
+
+.logoColourChange {
+    color: var(--grey-white);
+    padding-left: 50px;
+}
+
+
+/* the container that contains all the forms */
+
+#regForm {
+    background-color: var(--white);
+    padding: 10px 30px 30px 30px;
+    width: 65%;
+    color: var(--blue);
+    margin: 10px 10px 10px 110px;
+    box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.062);
+    min-width: 300px;
+    max-width: 81vw;
+    transition: width ease-out .4s;
+    border-radius: 10px;
+}
+
+
+/* all the containers */
+
+.tab {
+    display: none;
+}
+
+
+/* basically the next button */
+
+button {
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    padding: 15px 80px;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 0.25rem;
+    outline: none;
+    transition: .4s;
+}
+
+.prevNext[data-finalOutput="true"] {
+    color: var(--blue);
+    background: var(--white);
+}
+
+
+/* hover over the button */
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+
+/*  the class containing the buttons */
+
+.buttons {
+    position: absolute;
+    z-index: 20;
+    transform: translateX(calc(50vw - 73%));
+    padding: 20px 0px;
+    margin: 0 40px;
+}
+
+
+/* buttons */
+
+#prevBtn {
+    background-color: var(--white);
+    color: var(--blue);
+}
+
+.prevNext {
+    margin: 0 50px;
+}
+
+
+/* the images in the card */
+
+#b .card img {
+    border: 5px solid #FFFFFF;
+}
+
+
+/* Float four columns side by side */
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+
+/* Remove extra left and right margins, due to padding */
+
+.row {
+    margin: 0 -5px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Style the counter cards */
+
+.card {
+    padding: 5px 16px;
+    text-align: center;
+    background: var(--grey-white);
+    margin: 15px 5px;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: var(--blue);
+}
+
+
+/* when a card is selected */
+
+.card[data-select="true"] {
+    background: var(--white);
+    transition: ease-out .4s;
+    z-index: 10;
+    box-shadow: inset 0px 0px 0px 2px var(--gold), 15px 15px 32px rgba(0, 0, 0, 0.1);
+}
+
+
+/* hover over selected card */
+
+.card[data-select="true"]:hover {
+    color: #000;
+}
+
+
+/* not selected card */
+
+.card[data-select="false"] {
+    transition: ease-out .4s;
+    z-index: 2;
+}
+
+
+/* hover over the non-selected Ccard */
+
+.card[data-select="false"]:hover {
+    color: #000;
+}
+
+
+/* header in the selected card*/
+
+.card[data-select="true"] h3 {
+    color: var(--gold);
+    transition: .4s;
+}
+
+
+/* hover over the card for header */
+
+.card:hover h3 {
+    color: var(--gold);
+    transition: .4s;
+}
+
+
+/* table */
+
+table {
+    line-height: 110%;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+/* inputs and comment area */
+
+input,
+textarea {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid var(--blue);
+    border-radius: 999px;
+    transition: .4s;
+}
+
+
+/* comment area */
+
+textarea {
+    height: 100px;
+    border-radius: 30px;
+}
+
+
+/* when input is focussed */
+
+input:focus {
+    box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--gold);
+    outline: none
+}
+
+
+/* date inputs */
+
+input[type="date"] {
+    padding: 15px;
+    background: var(--grey-white) url(https://cdn4.iconfinder.com/data/icons/evil-icons-user-interface/64/calendar-32.png) no-repeat 70%;
+    background-position: 98% center;
+    box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.062);
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+
+/* basically the input */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="time"],
+input[type="number"],
+textarea {
+    background: var(--grey-white);
+    padding: 15px 15px 15px 35px;
+    width: 100%;
+}
+
+
+/* turn off default browser styling for numbers and date*/
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+[type="date"]::-webkit-inner-spin-button,
+[type="date"]::-webkit-clear-button {
+    -webkit-appearance: none;
+}
+
+
+/* date picker arrow */
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+
+/* the inputs */
+
+.inputs {
+    width: 80%;
+}
+
+
+/* when an input is invalid */
+
+input.invalid,
+textarea.invalid {
+    border: 1px red solid;
+}
+
+
+/* input is not valid */
+
+.checkValid[data-valid="false"] {
+    border: 1px red solid;
+}
+
+
+/* when input is valid */
+
+input.valid,
+textarea.valid {
+    border: 1px solid var(--blue);
+}
+
+
+/* the writing in hte inputs/ placeholders */
+
+.inputs p {
+    display: inline-block;
+    margin-block-start: 1em;
+    margin-block-end: .5em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+
+/* number of days */
+
+#numDays {
+    width: 150px;
+}
+
+
+/* pick the number of days */
+
+.pickDays {
+    background: var(--grey-white);
+    display: inline-block;
+    border-radius: 99px;
+    border: 1px solid var(--blue);
+    user-select: none;
+}
+
+.pickDays .fas {
+    padding: 15px;
+}
+
+
+/* days input for the number of days */
+
+.pickDays input {
+    background: var(--white);
+    border: none;
+    text-align: center;
+    padding: 15px;
+}
+
+
+/* the output summary in the right */
+
+.outputSummary {
+    background: var(--blue);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 15;
+    border-radius: 10px 0 0 10px;
+    color: var(--grey-white);
+    padding-left: 25px;
+    padding-top: 5px;
+    box-shadow: 0px 0px 250px rgba(0, 0, 0, 0.21);
+    transition: margin ease-out .4s;
+    opacity: 0;
+}
+
+
+/* the header in the output summary */
+
+.outputSummary h2 {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+
+/* the orange line on the output summary */
+
+.orangeLine {
+    width: 7px;
+    background: var(--gold);
+    border-radius: 999px;
+    box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.062);
+    min-height: 161px;
+}
+
+
+/* the orange line on the final out put page */
+
+.orangeLine[data-finalOutput="true"] .box {
+    min-height: 114px;
+}
+
+
+/* the box containing  */
+
+.box {
+    background: var(--light-blue);
+    margin-left: 25px;
+    width: 16vw;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 15px 15px 32px rgba(0, 0, 0, 0.062);
+    transition: width ease-out .4s;
+}
+
+
+/* the title on the output page */
+
+.outputTitle {
+    margin-left: 25px;
+    font-size: 20px;
+    padding: 0 5px 3px 5px;
+}
+
+
+/* when you are in the form, the width for the output summary */
+
+.outputSummary[data-finalOutput="false"] {
+    width: calc(100% - 90px);
+    margin-left: calc(78% - 90px);
+    margin-right: calc(-78% + 90px);
+    padding-left: 25px;
+    opacity: 1;
+}
+
+
+/* final output summary on the final page */
+
+.outputSummary[data-finalOutput="true"] {
+    width: calc(100% - 90px);
+    padding-left: 5vw;
+    margin-top: 0;
+    opacity: 1;
+}
+
+
+/* output summary on the first page */
+
+.outputSummary[data-finalOutput="mainFalse"] {
+    width: calc(100% - 90px);
+    margin-left: calc(100% - 90px);
+    margin-right: calc(-100% - 90px);
+}
+
+
+/* header on the very las page of output summary  */
+
+.outputSummary[data-finalOutput="true"] h2 {
+    margin: 0;
+    margin-top: 60px;
+}
+
+.box[data-finalOutputBox="false"] {
+    width: 16vw;
+}
+
+.outputSummary[data-finalOutput="true"] .box {
+    width: 33vw;
+}
+
+
+/* Float four columns side by side */
+
+.columnOutput {
+    float: left;
+    width: 50%;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.columnOutput[data-finalOutput="true"] {
+    width: 50%;
+}
+
+.cardOutput {
+    min-height: 22.5vh;
+}
+
+
+/* Clear floats after the columns */
+
+.rowOutput:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+td:nth-child(even) {
+    text-align: right;
+}
+
+
+/* the progress bar on your left */
+
+.mainProgress {
+    background: var(--blue);
+    height: 100vh;
+    width: 80px;
+    position: fixed;
+    top: 65px;
+    z-index: 17;
+}
+
+
+/* the icons container on the bar */
+
+.Progress {
+    background: rgba(223, 223, 223, 0.05);
+    height: 60px;
+    width: 60px;
+    margin: 20px auto;
+    border-radius: 24px;
+    color: var(--gold);
+}
+
+
+/* the icons bar */
+
+.Progress a {
+    display: block;
+    margin: auto;
+    line-height: 60px;
+    text-align: center;
+    font-size: xx-large;
+}
+
+
+/* the line between icons */
+
+.line {
+    width: 60px;
+    height: 3px;
+    background: var(--grey-white);
+    margin: auto;
+    border-radius: 999px;
+}
+
+
+/* hte last icons */
+
+.progress.finish {
+    background-color: rgba(223, 223, 223, 0.05);
+}
+
+
+/* the active icon */
+
+.progress.active {
+    background: rgba(223, 223, 223, 1);
+}
+
+
+/* error message tha pops up when you stuff up */
+
+.errorMsg {
+    text-align: right;
+    color: red;
+    float: right;
+    margin-block-start: 1em;
+}
+
+
+/* checkbox container */
+
+.form-radio {
+    -webkit-appearance: none;
+    padding: 0;
+}
+
+.form-radio:hover+label {
+    background-color: #dfdfdfb2;
+}
+
+
+/* the box container  */
+
+.form-radio:checked+label {
+    background: var(--white);
+    color: var(--gold);
+    box-shadow: inset 0px 0px 0px 2px var(--gold), 15px 15px 32px rgba(0, 0, 0, 0.1);
+    transition: .4s;
+}
+
+
+/* the text for checkbox */
+
+.radio-label {
+    display: inline-block;
+    height: 12.5rem;
+    width: calc(33% - 21px);
+    border-radius: 0.5rem;
+    position: relative;
+    color: var(--blue);
+    text-align: center;
+    margin: 10px;
+    background: var(--grey-white);
+}
+
+
+/* the icons on the checkbox */
+
+.radio-label>.fa {
+    font-size: 3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+}
+
+
+/* rotating the roof rack icon */
+
+.fa-bars {
+    transform: translate(-50%, -80%) rotate(180deg) !important;
+}
+
+
+/* Moving the text */
+
+.radio-label>span {
+    font-weight: 500;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+}
+
+
+/* the checkbox webkit */
+
+#opt1,
+#opt2,
+#opt3,
+#opt4,
+#opt5 {
+    display: none;
+}
+
+.container {
+    display: block;
+    position: relative;
+    background: var(--grey-white);
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 50px;
+    margin: 20px;
+    cursor: pointer;
+    user-select: none;
+    max-width: 75%;
+}
+
+
+/* Hide the browser's default checkbox */
+
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+
+/* Create a custom checkbox */
+
+.checkmark {
+    position: absolute;
+    left: 10px;
+    top: 7.5px;
+    height: 25px;
+    width: 25px;
+    background-color: var(--blue);
+    opacity: 0.5;
+    border-radius: 50px;
+}
+
+
+/* On mouse-over, add a grey background color */
+
+.container:hover input~.checkmark {
+    background-color: var(--gold);
+}
+
+
+/* When the checkbox is checked, add a blue background */
+
+.container input:checked~.checkmark {
+    background-color: var(--gold);
+    opacity: 1;
+}
+
+
+/* Create the checkmark/indicator (hidden when not checked) */
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+
+/* Show the checkmark when checked */
+
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+
+/* Style the checkmark/indicator */
+
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+/* footer container */
+
+.footer {
+    background: linear-gradient(45deg, #1C2437, #455880);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 40px sans-serif;
+    font-family: 'Advent Pro', sans-serif;
+    padding: 55px 100px;
+    margin-top: 200px;
+    color: gold;
+    position: absolute;
+    z-index: 14;
+}
+
+
+/* the text in the footer */
+
+.footer .footer-info p {
+    color: #8f9296;
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+
+/* Footer links */
+
+.footer p.footer-links {
+    font-size: 18px;
+    color: #ffffff;
+    margin: 0 0 10px;
+    padding: 0;
+    font-family: 'Advent Pro', sans-serif;
+}
+
+.footer p.footer-links a {
+    display: inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* thanks you message when you confirm */
+
+.thanksMsg {
+    color: var(--gold);
+    text-align: center;
+    margin-top: 20px !important;
+}
+
+
+/* tablet view */
+
+@media screen and (max-width: 1300px) {
+    html {
+        overflow-x: hidden;
+    }
+    /* the coloumns for tablet */
+    .column {
+        width: 50%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .radio-label {
+        width: calc(50% - 25px);
+    }
+    /* the buttons on tablet */
+    .buttons {
+        position: absolute;
+        z-index: 20;
+        transform: translateX(calc(50vw - 50%));
+        padding: 20px 0px;
+        margin: 0 0px;
+    }
+    .prevNext {
+        margin: 0px 20px;
+    }
+    .outputSummary[data-finalOutput="false"] {
+        display: none;
+    }
+    #regForm {
+        width: 88% !important;
+    }
+    .cardOutput {
+        width: 100%;
+    }
+    /* the logo on tablet */
+    .logo {
+        background: rgba(239, 239, 239, 0.5);
+        padding-right: 50px;
+        width: 100%;
+        border-radius: 10px 0 0 0;
+    }
+    .card {
+        margin: 0;
+    }
+}
+
+
+/* for mobile view */
+
+@media screen and (max-width: 767px) {
+    /* The coloums cards on mobile */
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .columnOutput {
+        width: 100% !important;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .outputSummary[data-finalOutput="true"] .box {
+        width: 80vw;
+    }
+    .outputSummary[data-finalOutput="true"] {
+        width: 100vw;
+        overflow-y: scroll;
+    }
+    .mainProgress {
+        display: none;
+    }
+    #regForm {
+        width: 65%;
+        margin: 10px auto;
+        max-width: 90vw;
+    }
+    .prevNext {
+        margin: 0;
+    }
+    .nextButton {
+        display: block !important;
+        padding-top: 20px;
+    }
+}
+
+
+/* the smallest screen possible */
+
+@media screen and (max-width: 500px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .radio-label {
+        width: calc(100% - 25px);
+    }
+    #numDays {
+        width: 79px;
+    }
+}

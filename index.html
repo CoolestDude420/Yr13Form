@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+        <title>HTML Reference</title>
+    </head>
+
+    <body onload="todayDate()">
+        <div class="logo">
+            <!-- logo in nav bar -->
+            <img alt="RhinoShield logo" height="30px" src="images/ricky_s_rides_transparent.png">
+            <div class="main-logo-text" id="main-logo-text">
+                <div class="logoText" id="logoColourChange">
+                    Ricky's&nbsp;
+                </div>
+                <div class="logoText">
+                    Rides
+                </div>
+            </div>
+        </div>
+        <!-- header containing hlogo and text -->
+        <div class="mainHeader"></div>
+        <!-- prgress bar on left -->
+        <div class="mainProgress">
+            <div>
+                <div class="Progress progress">
+                    <a><i class="fas fa-car"></i></a>
+                </div>
+                <div class="line"></div>
+                <div class="Prog3 Progress progress">
+                    <a><i class="fas fa-plus"></i></a>
+                </div>
+                <div class="line"></div>
+                <div class="Prog4 Progress progress">
+                    <a><i class="fas fa-calendar-alt"></i></a>
+                </div>
+                <div class="line"></div>
+                <div class="Prog4 Progress progress">
+                    <a><i class="fas fa-user"></i></a>
+                </div>
+                <div class="line"></div>
+                <div class="Prog4 Progress progress">
+                    <a><i class="fas fa-money-check-alt"></i></a>
+                </div>
+            </div>
+        </div>
+        <!-- output summary on the right -->
+        <div class="outputSummary" id="outPutSummary">
+            <h2>Output Summary</h2><br>
+            <div class="rowOutput">
+                <div class="columnOutput">
+                    <div class="cardOutput">
+                        <div class="orangeLine">
+                            <div class="outputTitle" id="vehicle">
+                                Selected&nbsp;Vehicle
+                            </div>
+                            <div class="box" id="boxOutput">
+                                <p id="vehicleOut"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columnOutput" id="outputWidth">
+                    <div class="cardOutput">
+                        <div id="extraOutputBox">
+                            <div class="orangeLine" id="extrasOutput">
+                                <div class="outputTitle">
+                                    Extra&nbsp;Items
+                                </div>
+                                <div class="box" id="boxOutput">
+                                    <p id="extraOut"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columnOutput">
+                    <div class="cardOutput">
+                        <div class="orangeLine">
+                            <div class="outputTitle">
+                                Current&nbsp;Total
+                            </div>
+                            <div class="box" id="boxOutput">
+                                <table>
+                                    <tr>
+                                        <td><strong>For vehicle:</strong></td>
+                                        <td id="priceCar">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Extra Items:</strong></td>
+                                        <td id="outputExtra">$0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Insurance Fee:</strong></td>
+                                        <td id="insuranceFEE">$20.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Booking Fee:</strong></td>
+                                        <td id="bookingFEE">$50.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Total Price:</strong></td>
+                                        <td id="priceTotal">$0.00</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="columnOutput">
+                    <div class="cardOutput">
+                        <div class="cardOutput">
+                            <div>
+                                <div class="orangeLine">
+                                    <div class="outputTitle">
+                                        Information
+                                    </div>
+                                    <div class="box">
+                                        <p id="pickupDateOutput">Pickup-Date</p>
+                                        <p id="infoOutput"></p>
+                                        <p id="nameOutput">Name: </p>
+                                        <p id="emailOutput">email: </p>
+                                        <p id="commentOutput">Comments: NONE</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="thanksMsg">
+                <h2 id="thanksOutput"><br><br></h2>
+            </div>
+        </div>
+        <!-- main form starts here -->
+        <form id="regForm" name="regForm">
+            <h1>Vehicle Reservation:</h1>
+            <!-- choosing vehicles -->
+            <div class="tab">
+                <div class="row" onclick="outputTotal()">
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 5 x Seatbelts&lt;br&gt; &lt;strong&gt;Body Style:&lt;/strong&gt; 5 Door Hatch&lt;br&gt; &lt;strong&gt;Luggage:&lt;/strong&gt; 1 Large, 2 Small&lt;br&gt; &lt;strong&gt; Engine Size:&lt;/strong&gt; 1.3 - 2.0 Litre&lt;br&gt; &lt;strong&gt;Fuel Usage:&lt;/strong&gt; +/- 7 L / 100km&lt;br&gt; &lt;strong&gt;Fuel Type:&lt;/strong&gt; Petrol&lt;br&gt; &lt;strong&gt; Transmission:&lt;/strong&gt; Automatic"
+                            data-price="18" data-select="false" data-vehicles="Nissan&nbsp;Tidda" onclick="pickCar(1,'card')">
+                            <h3>Nissan Tiida</h3>
+                            <p>$18 per day</p><img src="images/Vehicles/Nissan%20Tida.png" width="100%">
+                            <p><strong>Seats:</strong> 5<br>
+                                <strong>Fuel Usage:</strong> 7L / 100km<br>
+                                <strong>Fuel Type:</strong> Petrol<br>
+                                <strong>Transmission:</strong> Automatic<br></p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 5 x Seatbelts&lt;br&gt; &lt;strong&gt;Luggage:&lt;/strong&gt; 1 Large, 1 Small&lt;br&gt; &lt;strong&gt;Engine Size:&lt;/strong&gt; 1.2 - 1.4 Litre&lt;br&gt; &lt;strong&gt;Fuel Usage:&lt;/strong&gt; +/- 6 L / 100km&lt;br&gt; &lt;strong&gt; Fuel Type:&lt;/strong&gt; Petrol&lt;br&gt; &lt;strong&gt; Transmission:&lt;/strong&gt; Automatic"
+                            data-price="18" data-select="false" data-vehicles="Suzuki&nbsp;Swift" onclick="pickCar(2,'card')">
+                            <h3>Suzuki Swift</h3>
+                            <p>$18 per day</p><img src="images/Vehicles/suzuki%20Swift.png" width="100%">
+                            <p><strong>Seats:</strong> 5<br>
+                                <strong>Fuel Usage:</strong> 6L / 100km<br>
+                                <strong>Fuel Type:</strong> Petrol<br>
+                                <strong>Transmission:</strong> Automatic</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 5 x Seatbelts&lt;br&gt; &lt;strong&gt;Luggage:&lt;/strong&gt; 2 Large, 1 Small&lt;br&gt; &lt;strong&gt;Engine Size:&lt;/strong&gt; 1.6 - 2.0 Litre&lt;br&gt; &lt;strong&gt;Fuel Usage:&lt;/strong&gt; +/- 6 L / 100km&lt;br&gt; &lt;strong&gt; Fuel Type:&lt;/strong&gt; Petrol&lt;br&gt; &lt;strong&gt;Transmission:&lt;/strong&gt; Automatic"
+                            data-price="23" data-select="false" data-vehicles="Mazda&nbsp;3" onclick="pickCar(3, 'card')">
+                            <h3>Mazda 3</h3>
+                            <p>$23 per day</p><img src="images/Vehicles/Mazda%203.png" width="100%">
+                            <p><strong>Seats:</strong> 5<br>
+                                <strong>Fuel Usage:</strong> 6L / 100km<br>
+                                <strong>Fuel Type:</strong> Petrol<br>
+                                <strong>Transmission:</strong> Automatic</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 5 x Seatbelts&lt;br&gt; &lt;strong&gt; Luggage:&lt;/strong&gt; 1 Large, 2 Small&lt;br&gt; &lt;strong&gt;Engine Size:&lt;/strong&gt; 1.4 - 1.8 Litre&lt;br&gt; &lt;strong&gt; Fuel Usage:&lt;/strong&gt; +/- 6.9 L / 100km&lt;br&gt; &lt;strong&gt; Fuel Type:&lt;/strong&gt; Petrol&lt;br&gt; &lt;strong&gt; Transmission:&lt;/strong&gt; Automatic"
+                            data-price="41" data-select="false" data-vehicles="Holden&nbsp;Trax" onclick="pickCar(4,'card')">
+                            <h3>Holden Trax</h3>
+                            <p>$41 per day</p><img src="images/Vehicles/Holden%20Trax.png" width="100%">
+                            <p><strong>Seats:</strong> 5<br>
+                                <strong>Fuel Usage:</strong> 7L / 100km<br>
+                                <strong>Fuel Type:</strong> Petrol<br>
+                                <strong>Transmission:</strong> Automatic</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 5 x Seatbelts&lt;br&gt; &lt;strong&gt;Luggage:&lt;/strong&gt; 3 Large, 1 Small&lt;br&gt; &lt;strong&gt;Engine Size:&lt;/strong&gt; 3 Litre&lt;br&gt; &lt;strong&gt; Fuel Usage:&lt;/strong&gt; +/- 9.2 L / 100km&lt;br&gt; &lt;strong&gt; Fuel Type:&lt;/strong&gt; Petrol&lt;br&gt; &lt;strong&gt; Transmission:&lt;/strong&gt; Automatic"
+                            data-price="52" data-select="false" data-vehicles="Holden&nbsp;Captiva" onclick="pickCar(5,'card')">
+                            <h3>Holden Captiva</h3>
+                            <p>$52 per day</p><img src="images/Vehicles/Holden%20Captiva.png" width="100%">
+                            <p><strong>Seats:</strong> 5<br>
+                                <strong>Fuel Usage:</strong> 9L / 100km<br>
+                                <strong>Fuel Type:</strong> Petrol<br>
+                                <strong>Transmission:</strong> Automatic</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 8 x Seatbelts&lt;br&gt; &lt;strong&gt; Luggage:&lt;/strong&gt; 3 Large, 2 Small&lt;br&gt; &lt;strong&gt; Engine Size:&lt;/strong&gt; 2.4 Litre&lt;br&gt; &lt;strong&gt; Fuel Usage:&lt;/strong&gt; +/- 9.51 L / 100km&lt;br&gt; &lt;strong&gt; Fuel Type:&lt;/strong&gt; Petrol Unleaded 91&lt;br&gt; &lt;strong&gt; Transmission:&lt;/strong&gt; Automatic"
+                            data-price="62" data-select="false" data-vehicles="Toyota&nbsp;Estima" onclick="pickCar(6,'card')">
+                            <h3>Toyota Estima</h3>
+                            <p>$62 per day</p><img src="images/Vehicles/Toyota%20Estima.png" width="100%">
+                            <p><strong>Seats:</strong> 8<br>
+                                <strong>Fuel Usage:</strong> 10L / 100km<br>
+                                <strong>Fuel Type:</strong> Petrol<br>
+                                <strong>Transmission:</strong> Automatic</p>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="card" data-details="&lt;strong&gt;Seats:&lt;/strong&gt; 8 x Seatbelts&lt;br&gt; &lt;strong&gt;Luggage:&lt;/strong&gt; 3 Large, 2 Small&lt;br&gt; &lt;strong&gt;Engine Size:&lt;/strong&gt; 2.4 Litre&lt;br&gt; &lt;strong&gt; Fuel Usage:&lt;/strong&gt; +/- 9.51 L / 100km&lt;br&gt; &lt;strong&gt; Fuel Type:&lt;/strong&gt; Petrol Unleaded 91&lt;br&gt; &lt;strong&gt; Transmission:&lt;/strong&gt; Automatic"
+                            data-price="89" data-select="false" data-vehicles="Nissan&nbsp;Leaf" onclick="pickCar(7,'card')">
+                            <h3>Nissan Leaf</h3>
+                            <p>$89 per day</p><img src="images/Vehicles/Nissan%20Caravan.png" width="100%">
+                            <p><strong>Seats:</strong> 10<br>
+                                <strong>Fuel Usage:</strong> 10L / 100km<br>
+                                <strong>Fuel Type:</strong> Electric<br>
+                                <strong>Transmission:</strong> Automatic</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab">
+                <!-- entering in extras -->
+                <div class="form__fields" onclick="getExtra(document.thisForm)">
+                    <input class="form-radio Additionals" data-cost="60" data-value="Snow chains - $60" id="opt1" name="additional" type="checkbox"> <label class="radio-label" for="opt1"><i aria-hidden="true" class="fa fa-snowflake"></i> <span><br>
+				Snow Chains<br>
+				$60</span></label> <input class="form-radio Additionals" data-cost="90" data-value="Roof rack - $90" id="opt2" name="additional" type="checkbox"> <label class="radio-label" for="opt2"><i aria-hidden="true" class="fa fa-bars"></i> <span><br>
+				Roof racks<br>
+				$90</span></label> <input class="form-radio Additionals" data-cost="120" data-value="Bike rack (Max 3 bikes) - $120" id="opt3" name="additional" type="checkbox"> <label class="radio-label" for="opt3"><i aria-hidden="true" class="fa fa-bicycle"></i> <span>Bike rack<br>
+				(Max 3 bikes)<br>
+				$120</span></label> <input class="form-radio Additionals" data-cost="35" data-value="GPS - $35" id="opt4" name="additional" type="checkbox"> <label class="radio-label" for="opt4"><i aria-hidden="true" class="fa fa-map-marked-alt"></i> <span><br>
+				GPS<br>
+				$35</span></label> <input class="form-radio Additionals" data-cost="50" data-value="Booster Seat (Max 36kg)- $50" id="opt5" name="additional" type="checkbox"> <label class="radio-label" for="opt5"><i aria-hidden="true" class="fa fa-baby"></i> <span>Booster Seat (Max 36kg)<br>
+				$50</span></label>
+                </div>
+            </div>
+            <div class="tab">
+                <!-- entering in vpickup details and how many days -->
+                <div>
+                    <div class="inputs">
+                        <h3>Number of Days hiring (max 14):</h3>
+                        <div class="pickDays">
+                            <i class="fas fa-minus" onclick="updateNights(-1); outputTotal()"></i> <label for="numDays"><input disabled id="numDays" max="14" min="1" oninput="updateNights(-1); outputTotal()" type="number" value="1"></label> <i class="fas fa-plus"
+                                onclick="updateNights(1); outputTotal()"></i>
+                        </div>
+                        <div>
+                            <h3>Select the date of pickup:</h3><input id="pickupDate" type="date">
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="tab" oninput="validateForm(); outputTotal()">
+                <h3>Enter your details below</h3>
+                <!-- adding all the user details -->
+                <div class="inputs">
+                    <p>Enter your name:</p>
+                    <div class="errorMsg" id="nameInvalid">
+                        &nbsp;
+                        <!-- name input -->
+                    </div><input autocomplete="on" class="checkValid" id="mainName" pattern="[A-Za-z ]{2,25}" placeholder="Joe Dow" required="" title="Enter your first name" type="text">
+                    <p>Enter your email:</p>
+                    <!-- email input -->
+                    <div class="errorMsg" id="emailInvalid">
+                        &nbsp;
+                    </div><input autocomplete="on" class="checkValid" id="email" placeholder="example@gmail.com" required="" type="email">
+                    <!-- cellphone input -->
+                    <p>Enter you cellphone:</p>
+                    <div class="errorMsg" id="cellInvalid">
+                        &nbsp;
+                    </div><input autocomplete="on" class="checkValid" id="phone" name="phone" pattern="[0-9]{9,11}" placeholder="021489432" required="" type="tel">
+                    <p>Enter your age:</p>
+                    <div class="errorMsg" id="ageInvalid">
+                        <!-- age input -->
+                        &nbsp;
+                    </div><label for="numAge"><input class="checkValid" id="numAge" max="99" min="16" oninput="checkAge(this)" placeholder="Min 16" required="" type="number"></label>
+                    <p>Comments:</p>
+                    <!-- comment input -->
+                    <div class="comment">
+                        <textarea id="userComment" placeholder="Tell us anything important or anything you just feel like telling"></textarea>
+                    </div>
+                </div><label class="privacyCheck container"><input id="privacyCheck" type="checkbox" onclick="privacy()">I agree to Ricky's Rides terms of services and the Privacy and Policy.<span class="checkmark"></span></label><br>
+            </div>
+            <div class="tab"></div>
+        </form>
+        <div>
+            <!-- the next an previuous buttons -->
+            <div class="buttons" id="nextPrevButtons">
+                <button class="prevNext" id="prevBtn" onclick="nextPrev(-1)" type="button">Previous</button> <button class="prevNext nextButton" id="nextBtn" onclick="nextPrev(1)" type="button">Continue</button>
+            </div>
+        </div>
+        <!-- footer starts now -->
+        <footer class="footer" id="footer">
+            <div class="footer-info">
+                <img alt="Ricky's Rides logo" src="images/ricky_s_rides_transparent.png" width="75px"> Ricky's Rides<br>
+                <p class="footer-links"><a href="index.html">Home</a></p>
+                <!-- business details -->
+                <p>2 Arthur Street, Dunedin</p>
+                <p>phone: 03 4775277</p>
+                <p>email: rickey’srides@gmail.com</p>
+                <br>
+                <!-- copyright details -->
+                <p>Ricky's Rides &copy; 2019. All rights reserved.</p>
+                <p>Wepage developed by Abdurrahman Obaidullah &copy; 2019</p>
+            </div>
+
+        </footer>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase.js">
+        </script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyBjjbTODR80QZWUVToVdpdRmajsFHBDTU0",
+                authDomain: "ricky-srides.firebaseapp.com",
+                databaseURL: "https://ricky-srides.firebaseio.com",
+                projectId: "ricky-srides",
+                storageBucket: "ricky-srides.appspot.com",
+                messagingSenderId: "392516797328",
+                appId: "1:392516797328:web:1b33be235635ad4077a915"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <script src="index.js">
+        </script>
+    </body>
+
+</html>
